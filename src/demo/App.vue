@@ -61,6 +61,7 @@ body {
 .app {
   padding-bottom: 100px;
 
+  font-size: 12pt;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -107,7 +108,22 @@ body {
   }
 }
 
-.code {
-  font-family: "Courier New", monospace;
+.demo-section {
+  margin: 60px 16px;
+
+  &__title,
+  &__subtitle {
+    margin: 48px 0 24px;
+    font-family: "Courier New", monospace;
+  }
+
+  &__title {
+    font-size: 1.8em;
+  }
+
+  &__subtitle {
+    margin: 32px 0 16px;
+    font-size: 1.2em;
+  }
 }
 </style>
