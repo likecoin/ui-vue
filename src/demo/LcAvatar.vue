@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import LcAvatar from "@/components/Avatar.vue";
+import LcAvatar from "@/components/LcAvatar";
 
 import src from "./assets/avatar/ckxpress.jpg";
 

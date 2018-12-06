@@ -20,7 +20,7 @@
 
     <h1>List of Components</h1>
 
-    <avatar-demo />
+    <lc-avatar-demo />
 
   </div>
 </template>
@@ -28,13 +28,13 @@
 <script>
 import Logo from "./assets/logo.svg?inline";
 
-import AvatarDemo from "./Avatar.vue";
+import LcAvatarDemo from "./LcAvatar.vue";
 
 export default {
   name: "app",
   components: {
     Logo,
-    AvatarDemo
+    LcAvatarDemo
   },
   data() {
     return {
