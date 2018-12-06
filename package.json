@@ -1,14 +1,21 @@
 {
   "name": "@likecoin/ui-vue",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "Nuxt.js project",
   "homepage": "https://likecoin.github.io/ui-vue",
   "license": "GPL-3.0",
   "author": "Ng Wing Tat, David <i@nwt.hk>",
+  "files": [
+    "dist/*",
+    "src/assets/*",
+    "src/components/*"
+  ],
+  "main": "./dist/ui-vue.common.js",
   "repository": "github:likecoin/ui-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name ui-vue ./src/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
