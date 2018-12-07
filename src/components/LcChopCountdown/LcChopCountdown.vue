@@ -1,6 +1,6 @@
 <template>
   <span class="lc-chop lc-chop-countdown" :style="rootStyle">
-    <div class="lc-chop__content">
+    <div class="lc-chop__content" :style="contentStyle">
       <chop />
       <span class="lc-chop__content__value">
         <span>{{ digit1 }}</span>
@@ -12,6 +12,7 @@
 
 <script>
 import Chop from "@/assets/chop/countdown.svg?inline";
+import chopMixin from "@/mixins/lc-chop";
 
 export default {
   name: "lc-chop-countdown",
@@ -30,22 +31,15 @@ export default {
     date: {
       type: Date,
       default: undefined
-    },
-    size: {
-      type: [Number, String],
-      default: 104,
-      validator(value) {
-        const v = parseInt(value, 10);
-        return Number.isInteger(v) && v >= 0;
-      }
     }
   },
+  mixins: [
+    chopMixin({
+      defaultSize: 104,
+      contentWiggleRotateZ: 5
+    })
+  ],
   computed: {
-    rootStyle() {
-      return {
-        fontSize: `${this.size}px`
-      };
-    },
     value() {
       let value;
       if (this.date) {

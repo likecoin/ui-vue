@@ -1,6 +1,6 @@
 <template>
   <span class="lc-chop lc-chop-approved" :style="rootStyle">
-    <div class="lc-chop__content">
+    <div class="lc-chop__content" :style="contentStyle">
       <chop />
     </div>
   </span>
@@ -8,29 +8,19 @@
 
 <script>
 import Chop from "@/assets/chop/approved.svg?inline";
+import chopMixin from "@/mixins/lc-chop";
 
 export default {
   name: "lc-chop-approved",
   components: {
     Chop
   },
-  props: {
-    size: {
-      type: [Number, String],
-      default: 244,
-      validator(value) {
-        const v = parseInt(value, 10);
-        return Number.isInteger(v) && v >= 0;
-      }
-    }
-  },
-  computed: {
-    rootStyle() {
-      return {
-        fontSize: `${this.size}px`
-      };
-    }
-  }
+  mixins: [
+    chopMixin({
+      defaultSize: 244,
+      contentWiggleRotateZ: 8
+    })
+  ]
 };
 </script>
 

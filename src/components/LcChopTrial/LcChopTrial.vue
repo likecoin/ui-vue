@@ -1,8 +1,8 @@
 <template>
   <span class="lc-chop lc-chop-trial" :style="rootStyle">
-    <div class="lc-chop__content">
+    <div class="lc-chop__content" :style="contentStyle">
       <chop />
-      <span class="lc-chop__content__value">
+      <span class="lc-chop__content__value" :style="valueStyle">
         {{ value }}
       </span>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 import Chop from "@/assets/chop/trial.svg?inline";
+import mixin from "@/mixins/lc-chop";
 
 export default {
   name: "lc-chop-trial",
@@ -21,22 +22,16 @@ export default {
     date: {
       type: Date,
       default: undefined
-    },
-    size: {
-      type: [Number, String],
-      default: 210,
-      validator(value) {
-        const v = parseInt(value, 10);
-        return Number.isInteger(v) && v >= 0;
-      }
     }
   },
+  mixins: [
+    mixin({
+      defaultSize: 210,
+      contentWiggleRotateZ: 3,
+      valueWiggleRotateZ: 4
+    })
+  ],
   computed: {
-    rootStyle() {
-      return {
-        fontSize: `${this.size}px`
-      };
-    },
     value() {
       const { date } = this;
       if (date) {

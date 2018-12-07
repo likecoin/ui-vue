@@ -1,8 +1,8 @@
 <template>
   <span class="lc-chop lc-chop-civic-liker" :style="rootStyle">
-    <div class="lc-chop__content">
+    <div class="lc-chop__content" :style="contentStyle">
       <chop />
-      <span class="lc-chop__content__value">
+      <span class="lc-chop__content__value" :style="valueStyle">
         {{ value }}
       </span>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 import Chop from "@/assets/chop/civic-liker.svg?inline";
+import chopMixin from "@/mixins/lc-chop";
 
 export default {
   name: "lc-chop-civic-liker",
@@ -25,22 +26,16 @@ export default {
     isTrial: {
       type: [Boolean, String],
       default: false
-    },
-    size: {
-      type: [Number, String],
-      default: 128,
-      validator(value) {
-        const v = parseInt(value, 10);
-        return Number.isInteger(v) && v >= 0;
-      }
     }
   },
+  mixins: [
+    chopMixin({
+      defaultSize: 128,
+      contentWiggleRotateZ: 5,
+      valueWiggleRotateZ: 6
+    })
+  ],
   computed: {
-    rootStyle() {
-      return {
-        fontSize: `${this.size}px`
-      };
-    },
     value() {
       if (this.isTrial) {
         return "TRIAL";
