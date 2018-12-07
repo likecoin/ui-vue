@@ -21,6 +21,7 @@
     <h1>List of Components</h1>
 
     <lc-avatar-demo />
+    <lc-chop-demo />
 
   </div>
 </template>
@@ -29,12 +30,14 @@
 import Logo from "./assets/logo.svg?inline";
 
 import LcAvatarDemo from "./LcAvatar.vue";
+import LcChopDemo from "./LcChop.vue";
 
 export default {
   name: "app",
   components: {
     Logo,
-    LcAvatarDemo
+    LcAvatarDemo,
+    LcChopDemo
   },
   data() {
     return {
@@ -110,6 +113,10 @@ body {
 
 .demo-section {
   margin: 60px 16px;
+
+  & + & {
+    margin-top: 120px;
+  }
 
   &__title,
   &__subtitle {
