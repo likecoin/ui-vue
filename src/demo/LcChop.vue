@@ -22,16 +22,30 @@
     </h3>
     <lc-chop-countdown days="99" size="200" />
 
+    <h2 class="demo-section__title">&lt;lc-chop-civic-liker/&gt;</h2>
+
+    <h3 class="demo-section__subtitle">
+      :date="new Date()"
+    </h3>
+    <lc-chop-civic-liker :date="new Date()" />
+
+    <h3 class="demo-section__subtitle">
+      is-trial
+    </h3>
+    <lc-chop-civic-liker is-trial />
+
   </section>
 </template>
 
 <script>
 import LcChopCountdown from "@/components/LcChopCountdown";
+import LcChopCivicLiker from "@/components/LcChopCivicLiker";
 
 export default {
   name: "lc-chop-demo",
   components: {
-    LcChopCountdown
+    LcChopCountdown,
+    LcChopCivicLiker
   },
   data() {
     const date = new Date();

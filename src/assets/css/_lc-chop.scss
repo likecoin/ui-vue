@@ -17,10 +17,19 @@
     width: 100%;
     height: 100%;
 
+    > svg {
+      display: block;
+    }
+
     &__value {
       position: absolute;
+      left: 0;
+      right: 0;  
 
       width: 100%;
+      
+      text-align: center;
+      line-height: 1;
     }
   }
 }
