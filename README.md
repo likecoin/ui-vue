@@ -14,11 +14,30 @@ npm install --save @likecoin/ui-vue
 ### Import the library in your code
 ```javascript
 import Vue from 'Vue';
-import LikeCoinUI from '@likecoin/ui-vue';
+import LikeCoinUI, * as components from '@likecoin/ui-vue';
 
 import '@likecoin/ui-vue/dist/ui-vue.css';
 
-Vue.use(LikeCoinUI);
+Vue.use(LikeCoinUI, {
+  components,
+});
+
+```
+
+A La Carte
+```javascript
+import Vue from 'Vue';
+import LikeCoinUI, {
+  LcAvatar,
+} from '@likecoin/ui-vue';
+
+import '@likecoin/ui-vue/dist/ui-vue.css';
+
+Vue.use(LikeCoinUI, {
+  components: {
+    LcAvatar,
+  },
+});
 ```
 
 ## Development

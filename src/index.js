@@ -1,13 +1,6 @@
-import * as components from "./components";
-
 import "./assets/css/index.scss";
 
-const LikeCoinUI = {
-  install(Vue) {
-    Object.values(components).forEach(component => {
-      Vue.component(component.name, component);
-    });
-  }
-};
+import LikeCoinUI from "./components/LikeCoinUI";
 
 export default LikeCoinUI;
+export * from "./components";

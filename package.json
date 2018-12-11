@@ -6,16 +6,14 @@
   "license": "GPL-3.0",
   "author": "Ng Wing Tat, David <i@nwt.hk>",
   "files": [
-    "dist/*",
-    "src/assets/*",
-    "src/components/*"
+    "dist/*"
   ],
   "main": "./dist/ui-vue.common.js",
   "repository": "github:likecoin/ui-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:lib": "vue-cli-service build --target lib --name ui-vue ./src/index.js",
+    "build:lib": "vue-cli-service build --target lib --name ui-vue ./src/index.js && rm dist/demo.html",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
