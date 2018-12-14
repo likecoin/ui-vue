@@ -13,10 +13,10 @@
           v-else-if="isCivicLiker"
         />
         <civic-liker-trial-small-halo
-          v-else-if="isCivicLikerBeta && isSmall"
+          v-else-if="isCivicLikerTrial && isSmall"
         />
         <civic-liker-trial-halo
-          v-else-if="isCivicLikerBeta"
+          v-else-if="isCivicLikerTrial"
         />
       </div>
     </div>
@@ -100,7 +100,7 @@ export default {
     isCivicLiker() {
       return this.halo === HALO_TYPE.CIVIC_LIKER;
     },
-    isCivicLikerBeta() {
+    isCivicLikerTrial() {
       return this.halo === HALO_TYPE.CIVIC_LIKER_TRIAL;
     },
     isSmall() {
