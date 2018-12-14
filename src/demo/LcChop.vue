@@ -45,6 +45,11 @@
 
     <lc-chop-approved />
 
+    <h3 class="demo-section__subtitle">
+      is-trial
+    </h3>
+    <lc-chop-approved is-trial />
+
   </section>
 </template>
 
