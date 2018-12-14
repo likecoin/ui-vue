@@ -67,7 +67,10 @@ export default {
       type: String,
       default: HALO_TYPE.NONE,
       validator(value) {
-        return HALO_TYPE[value.toUpperCase().replace(/-/g, "_")] === value;
+        return (
+          value === "" ||
+          HALO_TYPE[value.toUpperCase().replace(/-/g, "_")] === value
+        );
       }
     }
   },
