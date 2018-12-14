@@ -1,5 +1,5 @@
 <template>
-  <span class="lc-chop lc-chop-trial" :style="rootStyle">
+  <span :class="rootClass" :style="rootStyle">
     <div class="lc-chop__content" :style="contentStyle">
       <chop />
       <span class="lc-chop__content__value" :style="valueStyle">
@@ -22,6 +22,10 @@ export default {
     date: {
       type: Date,
       default: undefined
+    },
+    isTrialling: {
+      type: [Boolean, String],
+      default: false
     }
   },
   mixins: [
@@ -32,6 +36,15 @@ export default {
     })
   ],
   computed: {
+    rootClass() {
+      return [
+        "lc-chop",
+        "lc-chop-trial",
+        {
+          "lc-chop-trial--trialling": this.isTrialling
+        }
+      ];
+    },
     value() {
       const { date } = this;
       if (date) {
@@ -52,6 +65,10 @@ export default {
   height: 0.604em;
 
   color: #28646e;
+
+  &--trialling {
+    color: #eec443;
+  }
 
   .lc-chop__content__value {
     top: 42%;

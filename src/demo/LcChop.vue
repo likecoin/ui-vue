@@ -41,6 +41,12 @@
     </h3>
     <lc-chop-trial :date="new Date()" />
 
+    <h3 class="demo-section__subtitle">
+      :date="new Date()"<br>
+      is-trialling
+    </h3>
+    <lc-chop-trial :date="new Date()" is-trialling />
+
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
     <lc-chop-approved />
