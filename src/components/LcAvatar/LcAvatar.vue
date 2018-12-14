@@ -12,10 +12,10 @@
         <civic-liker-halo
           v-else-if="isCivicLiker"
         />
-        <civic-liker-beta-small-halo
+        <civic-liker-trial-small-halo
           v-else-if="isCivicLikerBeta && isSmall"
         />
-        <civic-liker-beta-halo
+        <civic-liker-trial-halo
           v-else-if="isCivicLikerBeta"
         />
       </div>
@@ -26,13 +26,13 @@
 <script>
 import CivicLikerHalo from "@/assets/avatar/halo/civic-liker.svg?inline";
 import CivicLikerSmallHalo from "@/assets/avatar/halo/civic-liker_small.svg?inline";
-import CivicLikerBetaHalo from "@/assets/avatar/halo/civic-liker_beta.svg?inline";
-import CivicLikerBetaSmallHalo from "@/assets/avatar/halo/civic-liker_beta_small.svg?inline";
+import CivicLikerTrialHalo from "@/assets/avatar/halo/civic-liker_trial.svg?inline";
+import CivicLikerTrialSmallHalo from "@/assets/avatar/halo/civic-liker_trial_small.svg?inline";
 
 const HALO_TYPE = {
   NONE: "none",
   CIVIC_LIKER: "civic-liker",
-  CIVIC_LIKER_BETA: "civic-liker-beta"
+  CIVIC_LIKER_TRIAL: "civic-liker-trial"
 };
 
 const SIZE_TYPE = {
@@ -45,8 +45,8 @@ export default {
   components: {
     CivicLikerHalo,
     CivicLikerSmallHalo,
-    CivicLikerBetaHalo,
-    CivicLikerBetaSmallHalo
+    CivicLikerTrialHalo,
+    CivicLikerTrialSmallHalo
   },
   props: {
     src: {
@@ -98,7 +98,7 @@ export default {
       return this.halo === HALO_TYPE.CIVIC_LIKER;
     },
     isCivicLikerBeta() {
-      return this.halo === HALO_TYPE.CIVIC_LIKER_BETA;
+      return this.halo === HALO_TYPE.CIVIC_LIKER_TRIAL;
     },
     isSmall() {
       return this.numericSize < 64;

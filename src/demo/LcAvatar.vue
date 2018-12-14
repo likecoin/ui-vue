@@ -35,11 +35,11 @@
     />
 
     <h3 class="demo-section__subtitle">
-      halo="civic-liker-beta"
+      halo="civic-liker-trial"
     </h3>
     <lc-avatar
       :src="src"
-      halo="civic-liker-beta"
+      halo="civic-liker-trial"
     />
 
     <h3 class="demo-section__subtitle">
@@ -54,12 +54,12 @@
 
     <h3 class="demo-section__subtitle">
       size="large"<br>
-      halo="civic-liker-beta"
+      halo="civic-liker-trial"
     </h3>
     <lc-avatar
       :src="src"
       size="large"
-      halo="civic-liker-beta"
+      halo="civic-liker-trial"
     />
 
   </section>
