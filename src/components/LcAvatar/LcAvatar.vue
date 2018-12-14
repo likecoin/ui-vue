@@ -1,5 +1,5 @@
 <template>
-  <span class="lc-avatar">
+  <span :class="rootClass">
     <div
       class="lc-avatar__content"
       :style="contentStyle"
@@ -72,6 +72,10 @@ export default {
           HALO_TYPE[value.toUpperCase().replace(/-/g, "_")] === value
         );
       }
+    },
+    isFullWidth: {
+      type: [Boolean, String],
+      default: false
     }
   },
   computed: {
@@ -90,11 +94,23 @@ export default {
           return 56;
       }
     },
+    rootClass() {
+      return [
+        "lc-avatar",
+        {
+          "lc-avatar--full-width": !!this.isFullWidth
+        }
+      ];
+    },
     contentStyle() {
-      const width = `${this.numericSize}px`;
+      let width;
+      if (this.isFullWidth) {
+        width = "100%";
+      } else {
+        width = `${this.numericSize}px`;
+      }
       return {
-        width,
-        height: width
+        width
       };
     },
     isCivicLiker() {
@@ -117,10 +133,14 @@ $img-border-width: 3.125%;
 .lc-avatar {
   display: inline-block;
 
+  &--full-width {
+    display: block;
+  }
+
   &__content {
     position: relative;
 
-    padding: $img-border-width;
+    padding-bottom: 100%; // Maintain 1:1 ratio
 
     border-radius: 50%;
 
@@ -129,13 +149,18 @@ $img-border-width: 3.125%;
     background: linear-gradient(to bottom, #d2f0f0, #f0e6b4);
 
     img {
+      position: absolute;
+      top: $img-border-width;
+      left: $img-border-width;
+
       display: block;
 
-      width: 100%;
-      height: 100%;
+      width: #{100% - $img-border-width * 2};
+      height: #{100% - $img-border-width * 2};
 
       border-radius: inherit;
 
+      object-fit: cover;
       user-select: none;
     }
 

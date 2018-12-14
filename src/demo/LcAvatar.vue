@@ -27,6 +27,16 @@
     />
 
     <h3 class="demo-section__subtitle">
+      is-full-width
+    </h3>
+    <div class="block-demo">
+      <lc-avatar
+        :src="src"
+        is-full-width
+      />
+    </div>
+
+    <h3 class="demo-section__subtitle">
       halo="civic-liker"
     </h3>
     <lc-avatar
@@ -61,6 +71,32 @@
       size="large"
       halo="civic-liker-trial"
     />
+
+    <h3 class="demo-section__subtitle">
+      is-full-width<br>
+      halo="civic-liker-trial"
+    </h3>
+    <div class="block-demo block-demo--extend">
+      <lc-avatar
+        :src="src"
+        halo="civic-liker-trial"
+        is-full-width
+      />
+    </div>
+
+    <h3 class="demo-section__subtitle">
+      is-full-width<br>
+      size="large"<br>
+      halo="civic-liker-trial"
+    </h3>
+    <div class="block-demo block-demo--extend">
+      <lc-avatar
+        :src="src"
+        halo="civic-liker-trial"
+        size="large"
+        is-full-width
+      />
+    </div>
 
   </section>
 </template>
@@ -82,3 +118,19 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.block-demo {
+  border: 1px solid #ccc;
+
+  width: 80%;
+  max-width: 400px;
+
+  margin: 0 auto;
+
+  &--extend {
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
+}
+</style>
