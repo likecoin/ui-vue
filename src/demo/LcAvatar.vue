@@ -19,6 +19,14 @@
     />
 
     <h3 class="demo-section__subtitle">
+      size="200"
+    </h3>
+    <lc-avatar
+      :src="src"
+      size="200"
+    />
+
+    <h3 class="demo-section__subtitle">
       halo="civic-liker"
     </h3>
     <lc-avatar

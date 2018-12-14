@@ -57,7 +57,7 @@ export default {
       type: [String, Number],
       default: SIZE_TYPE.NORMAL,
       validator(value) {
-        if (!Number.isInteger(value) || value <= 0) {
+        if (!Number.isInteger(parseInt(value, 10))) {
           return SIZE_TYPE[value.toUpperCase()] === value;
         }
         return true;
@@ -74,17 +74,18 @@ export default {
   computed: {
     numericSize() {
       const { size } = this;
-      if (!Number.isInteger(size) || size <= 0) {
-        switch (size) {
-          case SIZE_TYPE.LARGE:
-            return 128;
-
-          case SIZE_TYPE.SMALL:
-          default:
-            return 56;
-        }
+      const numericSize = parseInt(size, 10);
+      if (Number.isInteger(numericSize) && numericSize > 0) {
+        return size;
       }
-      return size;
+      switch (size) {
+        case SIZE_TYPE.LARGE:
+          return 128;
+
+        case SIZE_TYPE.NORMAL:
+        default:
+          return 56;
+      }
     },
     contentStyle() {
       const width = `${this.numericSize}px`;
