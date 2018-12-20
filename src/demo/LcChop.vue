@@ -34,6 +34,12 @@
     </h3>
     <lc-chop-civic-liker is-trial />
 
+    <h3 class="demo-section__subtitle">
+      is-trial<br>
+      is-trialling
+    </h3>
+    <lc-chop-civic-liker is-trial is-trialling />
+
     <h2 class="demo-section__title">&lt;lc-chop-trial/&gt;</h2>
 
     <h3 class="demo-section__subtitle">

@@ -1,5 +1,5 @@
 <template>
-  <span class="lc-chop lc-chop-civic-liker" :style="rootStyle">
+  <span :class="rootClass" :style="rootStyle">
     <div class="lc-chop__content" :style="contentStyle">
       <chop />
       <span class="lc-chop__content__value" :style="valueStyle">
@@ -18,21 +18,13 @@ export default {
   components: {
     Chop
   },
-  props: {
-    date: {
-      type: Date,
-      default: undefined
-    },
-    isTrial: {
-      type: [Boolean, String],
-      default: false
-    }
-  },
   mixins: [
     chopMixin({
+      className: "lc-chop-civic-liker",
       defaultSize: 128,
       contentWiggleRotateZ: 5,
-      valueWiggleRotateZ: 6
+      valueWiggleRotateZ: 6,
+      props: ["date", "isTrial", "isTrialling"]
     })
   ],
   computed: {
@@ -41,15 +33,7 @@ export default {
         return "TRIAL";
       }
 
-      const { date } = this;
-      if (date) {
-        const d = date.getDate();
-        const m = date.getMonth() + 1;
-        const y = date.getFullYear();
-        return `${d < 10 ? "0" : ""}${d}.${m < 10 ? "0" : ""}${m}.${y}`;
-      }
-
-      return null;
+      return this.dateValue;
     }
   }
 };
@@ -60,6 +44,10 @@ export default {
   height: 1em;
 
   color: #28646e;
+
+  &--trialling {
+    color: #eec443;
+  }
 
   .lc-chop__content__value {
     top: 63.5%;
