@@ -3,7 +3,7 @@
     <div class="lc-chop__content" :style="contentStyle">
       <chop />
       <span class="lc-chop__content__value" :style="valueStyle">
-        {{ value }}
+        {{ dateValue }}
       </span>
     </div>
   </span>
@@ -18,45 +18,15 @@ export default {
   components: {
     Chop
   },
-  props: {
-    date: {
-      type: Date,
-      default: undefined
-    },
-    isTrialling: {
-      type: [Boolean, String],
-      default: false
-    }
-  },
   mixins: [
     mixin({
+      className: "lc-chop-trial",
       defaultSize: 210,
       contentWiggleRotateZ: 3,
-      valueWiggleRotateZ: 4
+      valueWiggleRotateZ: 4,
+      props: ["date", "isTrialling"]
     })
-  ],
-  computed: {
-    rootClass() {
-      return [
-        "lc-chop",
-        "lc-chop-trial",
-        {
-          "lc-chop-trial--trialling": this.isTrialling
-        }
-      ];
-    },
-    value() {
-      const { date } = this;
-      if (date) {
-        const d = date.getDate();
-        const m = date.getMonth() + 1;
-        const y = date.getFullYear();
-        return `${d < 10 ? "0" : ""}${d}.${m < 10 ? "0" : ""}${m}.${y}`;
-      }
-
-      return null;
-    }
-  }
+  ]
 };
 </script>
 

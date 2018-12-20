@@ -12,32 +12,17 @@ import chopMixin from "@/mixins/lc-chop";
 
 export default {
   name: "lc-chop-approved",
-  props: {
-    isTrial: {
-      type: [Boolean, String],
-      default: false
-    }
-  },
   components: {
     Chop
   },
   mixins: [
     chopMixin({
+      className: "lc-chop-approved",
       defaultSize: 244,
-      contentWiggleRotateZ: 8
+      contentWiggleRotateZ: 8,
+      props: ["isTrial"]
     })
-  ],
-  computed: {
-    rootClass() {
-      return [
-        "lc-chop",
-        "lc-chop-approved",
-        {
-          "lc-chop-approved--trial": this.isTrial
-        }
-      ];
-    }
-  }
+  ]
 };
 </script>
 
