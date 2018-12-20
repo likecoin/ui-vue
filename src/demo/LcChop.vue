@@ -40,18 +40,18 @@
     </h3>
     <lc-chop-civic-liker is-trial is-trialling />
 
-    <h2 class="demo-section__title">&lt;lc-chop-trial/&gt;</h2>
+    <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       :date="new Date()"
     </h3>
-    <lc-chop-trial :date="new Date()" />
+    <lc-chop-civic-liker-rect :date="new Date()" />
 
     <h3 class="demo-section__subtitle">
       :date="new Date()"<br>
       is-trialling
     </h3>
-    <lc-chop-trial :date="new Date()" is-trialling />
+    <lc-chop-civic-liker-rect :date="new Date()" is-trialling />
 
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
@@ -68,7 +68,7 @@
 <script>
 import LcChopCountdown from "@/components/LcChopCountdown";
 import LcChopCivicLiker from "@/components/LcChopCivicLiker";
-import LcChopTrial from "@/components/LcChopTrial";
+import LcChopCivicLikerRect from "@/components/LcChopCivicLikerRect";
 import LcChopApproved from "@/components/LcChopApproved";
 
 export default {
@@ -76,7 +76,7 @@ export default {
   components: {
     LcChopCountdown,
     LcChopCivicLiker,
-    LcChopTrial,
+    LcChopCivicLikerRect,
     LcChopApproved
   },
   data() {

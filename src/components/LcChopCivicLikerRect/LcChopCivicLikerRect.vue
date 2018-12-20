@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import Chop from "@/assets/chop/trial.svg?inline";
+import Chop from "@/assets/chop/civic-liker-rect.svg?inline";
 import mixin from "@/mixins/lc-chop";
 
 export default {
-  name: "lc-chop-trial",
+  name: "lc-chop-civic-liker-rect",
   components: {
     Chop
   },
   mixins: [
     mixin({
-      className: "lc-chop-trial",
+      className: "lc-chop-civic-liker-rect",
       defaultSize: 210,
       contentWiggleRotateZ: 3,
       valueWiggleRotateZ: 4,
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.lc-chop-trial {
+.lc-chop-civic-liker-rect {
   height: 0.604em;
 
   color: #28646e;
