@@ -7,13 +7,13 @@
       <img :src="src" />
       <div class="lc-avatar__content__halo">
         <civic-liker-small-halo
-          v-if="isCivicLiker && isSmall"
+          v-if="isSmall && halo !== 'none'"
         />
         <civic-liker-halo
           v-else-if="isCivicLiker"
         />
-        <civic-liker-trial-small-halo
-          v-else-if="isCivicLikerTrial && isSmall"
+        <civic-liker-beta-halo
+          v-else-if="isCivicLikerBeta"
         />
         <civic-liker-trial-halo
           v-else-if="isCivicLikerTrial"
@@ -26,12 +26,13 @@
 <script>
 import CivicLikerHalo from "@/assets/avatar/halo/civic-liker.svg?inline";
 import CivicLikerSmallHalo from "@/assets/avatar/halo/civic-liker_small.svg?inline";
+import CivicLikerBetaHalo from "@/assets/avatar/halo/civic-liker_beta.svg?inline";
 import CivicLikerTrialHalo from "@/assets/avatar/halo/civic-liker_trial.svg?inline";
-import CivicLikerTrialSmallHalo from "@/assets/avatar/halo/civic-liker_trial_small.svg?inline";
 
 const HALO_TYPE = {
   NONE: "none",
   CIVIC_LIKER: "civic-liker",
+  CIVIC_LIKER_BETA: "civic-liker-beta",
   CIVIC_LIKER_TRIAL: "civic-liker-trial"
 };
 
@@ -45,8 +46,8 @@ export default {
   components: {
     CivicLikerHalo,
     CivicLikerSmallHalo,
-    CivicLikerTrialHalo,
-    CivicLikerTrialSmallHalo
+    CivicLikerBetaHalo,
+    CivicLikerTrialHalo
   },
   props: {
     src: {
@@ -98,7 +99,9 @@ export default {
       return [
         "lc-avatar",
         {
-          "lc-avatar--full-width": !!this.isFullWidth
+          "lc-avatar--full-width": !!this.isFullWidth,
+          [`lc-avatar--with-halo lc-avatar--with-halo--${this.halo}`]:
+            this.halo && this.halo !== "none"
         }
       ];
     },
@@ -115,6 +118,9 @@ export default {
     },
     isCivicLiker() {
       return this.halo === HALO_TYPE.CIVIC_LIKER;
+    },
+    isCivicLikerBeta() {
+      return this.halo === HALO_TYPE.CIVIC_LIKER_BETA;
     },
     isCivicLikerTrial() {
       return this.halo === HALO_TYPE.CIVIC_LIKER_TRIAL;
@@ -174,6 +180,17 @@ $img-border-width: 3.125%;
       svg {
         width: 100%;
         height: 100%;
+
+        fill: currentColor;
+
+        .lc-avatar--with-halo--civic-liker & {
+          color: #40bfa5;
+        }
+
+        .lc-avatar--with-halo--civic-liker-beta &,
+        .lc-avatar--with-halo--civic-liker-trial & {
+          color: #eec443;
+        }
       }
     }
   }

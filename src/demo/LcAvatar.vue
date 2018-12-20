@@ -45,14 +45,6 @@
     />
 
     <h3 class="demo-section__subtitle">
-      halo="civic-liker-trial"
-    </h3>
-    <lc-avatar
-      :src="src"
-      halo="civic-liker-trial"
-    />
-
-    <h3 class="demo-section__subtitle">
       size="large"<br>
       halo="civic-liker"
     </h3>
@@ -64,39 +56,23 @@
 
     <h3 class="demo-section__subtitle">
       size="large"<br>
+      halo="civic-liker-beta"
+    </h3>
+    <lc-avatar
+      :src="src"
+      halo="civic-liker-beta"
+      size="large"
+    />
+
+    <h3 class="demo-section__subtitle">
+      size="large"<br>
       halo="civic-liker-trial"
     </h3>
     <lc-avatar
       :src="src"
+      halo="civic-liker-trial"
       size="large"
-      halo="civic-liker-trial"
     />
-
-    <h3 class="demo-section__subtitle">
-      is-full-width<br>
-      halo="civic-liker-trial"
-    </h3>
-    <div class="block-demo block-demo--extend">
-      <lc-avatar
-        :src="src"
-        halo="civic-liker-trial"
-        is-full-width
-      />
-    </div>
-
-    <h3 class="demo-section__subtitle">
-      is-full-width<br>
-      size="large"<br>
-      halo="civic-liker-trial"
-    </h3>
-    <div class="block-demo block-demo--extend">
-      <lc-avatar
-        :src="src"
-        halo="civic-liker-trial"
-        size="large"
-        is-full-width
-      />
-    </div>
 
   </section>
 </template>
