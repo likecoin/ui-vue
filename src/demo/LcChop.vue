@@ -40,6 +40,11 @@
     </h3>
     <lc-chop-civic-liker is-trial is-trialling />
 
+    <h3 class="demo-section__subtitle">
+      is-beta
+    </h3>
+    <lc-chop-civic-liker is-beta />
+
     <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
