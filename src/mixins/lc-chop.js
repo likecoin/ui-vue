@@ -5,6 +5,10 @@ const EXTRA_PROPS = {
     type: Date,
     default: undefined
   },
+  isBeta: {
+    type: [Boolean, String],
+    default: false
+  },
   isTrial: {
     type: [Boolean, String],
     default: false
@@ -76,6 +80,7 @@ export default function({
           "lc-chop",
           className,
           {
+            [`${className}--beta`]: !!this.isBeta,
             [`${className}--trial`]: !!this.isTrial,
             [`${className}--trialling`]: !!this.isTrialling
           }

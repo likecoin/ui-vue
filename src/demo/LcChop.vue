@@ -60,6 +60,12 @@
     </h3>
     <lc-chop-civic-liker-rect :date="new Date()" is-trial is-trialling />
 
+    <h3 class="demo-section__subtitle">
+      :date="new Date()"<br>
+      is-beta
+    </h3>
+    <lc-chop-civic-liker-rect :date="new Date()" is-beta />
+
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
     <lc-chop-approved />

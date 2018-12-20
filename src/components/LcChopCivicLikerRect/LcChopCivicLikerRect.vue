@@ -2,9 +2,10 @@
   <span :class="rootClass" :style="rootStyle">
     <div class="lc-chop__content" :style="contentStyle">
       <chop />
-      <trial-chop v-if="isTrial" />
+      <beta-chop v-if="isBeta" />
+      <trial-chop v-else-if="isTrial" />
       <span class="lc-chop__content__value" :style="valueStyle">
-        {{ dateValue }}
+        {{ value }}
       </span>
     </div>
   </span>
@@ -12,6 +13,7 @@
 
 <script>
 import Chop from "@/assets/chop/civic-liker-rect.svg?inline";
+import BetaChop from "@/assets/chop/civic-liker-rect_beta.svg?inline";
 import TrialChop from "@/assets/chop/civic-liker-rect_trial.svg?inline";
 import mixin from "@/mixins/lc-chop";
 
@@ -19,6 +21,7 @@ export default {
   name: "lc-chop-civic-liker-rect",
   components: {
     Chop,
+    BetaChop,
     TrialChop
   },
   mixins: [
@@ -27,9 +30,18 @@ export default {
       defaultSize: 210,
       contentWiggleRotateZ: 3,
       valueWiggleRotateZ: 4,
-      props: ["date", "isTrial", "isTrialling"]
+      props: ["date", "isTrial", "isTrialling", "isBeta"]
     })
-  ]
+  ],
+  computed: {
+    value() {
+      if (this.isBeta) {
+        return "LIMITED QUOTA";
+      }
+
+      return this.dateValue;
+    }
+  }
 };
 </script>
 
@@ -41,6 +53,14 @@ export default {
 
   &--trialling {
     color: #eec443;
+  }
+
+  &#{&}--beta {
+    color: #8c293c;
+
+    .lc-chop__content__value {
+      font-size: 0.1em;
+    }
   }
 
   .lc-chop__content__value {
