@@ -43,15 +43,22 @@
     <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
-      :date="new Date()"
+      :date="new Date()"<br>
     </h3>
     <lc-chop-civic-liker-rect :date="new Date()" />
 
     <h3 class="demo-section__subtitle">
       :date="new Date()"<br>
+      is-trial
+    </h3>
+    <lc-chop-civic-liker-rect :date="new Date()" is-trial />
+
+    <h3 class="demo-section__subtitle">
+      :date="new Date()"<br>
+      is-trial<br>
       is-trialling
     </h3>
-    <lc-chop-civic-liker-rect :date="new Date()" is-trialling />
+    <lc-chop-civic-liker-rect :date="new Date()" is-trial is-trialling />
 
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
