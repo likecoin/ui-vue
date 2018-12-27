@@ -22,6 +22,7 @@
 
     <lc-avatar-demo />
     <lc-chop-demo />
+    <lc-progress-demo />
 
   </div>
 </template>
@@ -31,13 +32,15 @@ import Logo from "./assets/logo.svg?inline";
 
 import LcAvatarDemo from "./LcAvatar.vue";
 import LcChopDemo from "./LcChop.vue";
+import LcProgressDemo from "./LcProgress";
 
 export default {
   name: "app",
   components: {
     Logo,
     LcAvatarDemo,
-    LcChopDemo
+    LcChopDemo,
+    LcProgressDemo
   },
   data() {
     return {
