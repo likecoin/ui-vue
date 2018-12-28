@@ -2,7 +2,7 @@
   <span :class="rootClass" :style="rootStyle">
     <div class="lc-chop__content" :style="contentStyle">
       <chop />
-      <beta-chop v-if="isBeta" />
+      <quota-chop v-if="isBeta" />
       <trial-chop v-else-if="isTrial" />
       <span class="lc-chop__content__value" :style="valueStyle">
         {{ value }}
@@ -13,7 +13,7 @@
 
 <script>
 import Chop from "@/assets/chop/civic-liker-rect.svg?inline";
-import BetaChop from "@/assets/chop/civic-liker-rect_beta.svg?inline";
+import QuotaChop from "@/assets/chop/civic-liker-rect_quota.svg?inline";
 import TrialChop from "@/assets/chop/civic-liker-rect_trial.svg?inline";
 import mixin from "@/mixins/lc-chop";
 
@@ -21,7 +21,7 @@ export default {
   name: "lc-chop-civic-liker-rect",
   components: {
     Chop,
-    BetaChop,
+    QuotaChop,
     TrialChop
   },
   mixins: [

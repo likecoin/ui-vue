@@ -30,7 +30,7 @@ export default {
   computed: {
     value() {
       if (this.isBeta) {
-        return "BETA";
+        return "LIKE";
       }
 
       if (this.isTrial) {
