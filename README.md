@@ -49,14 +49,14 @@ npm install -g @vue/cli
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development in demo page
 ```sh
-npm run serve
+npm run demo
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for demo in static HTML
 ```sh
-npm run build
+npm run build:demo
 ```
 
 ### Compiles and minifies for library
