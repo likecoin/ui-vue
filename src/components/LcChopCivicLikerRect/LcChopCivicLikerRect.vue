@@ -36,7 +36,7 @@ export default {
   computed: {
     value() {
       if (this.isBeta) {
-        return "LIMITED QUOTA";
+        return "LIMITED";
       }
 
       return this.dateValue;
@@ -57,10 +57,6 @@ export default {
 
   &#{&}--beta {
     color: #8c293c;
-
-    .lc-chop__content__value {
-      font-size: 0.1em;
-    }
   }
 
   .lc-chop__content__value {
