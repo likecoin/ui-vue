@@ -124,8 +124,8 @@ export default {
 </script>
 
 <style lang="scss">
-$halo-offset: -7.815%;
-$img-border-width: 3.125%;
+$halo-offset: -9.375%; // 12 ÷ 128
+$img-border-width: 3.125%; // 4 ÷ 128
 
 .lc-avatar {
   display: inline-block;
