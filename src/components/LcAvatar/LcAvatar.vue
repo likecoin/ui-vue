@@ -12,9 +12,6 @@
         <civic-liker-halo
           v-else-if="isCivicLiker"
         />
-        <civic-liker-beta-halo
-          v-else-if="isCivicLikerBeta"
-        />
         <civic-liker-trial-halo
           v-else-if="isCivicLikerTrial"
         />
@@ -26,13 +23,11 @@
 <script>
 import CivicLikerHalo from "@/assets/avatar/halo/civic-liker.svg?inline";
 import CivicLikerSmallHalo from "@/assets/avatar/halo/civic-liker_small.svg?inline";
-import CivicLikerBetaHalo from "@/assets/avatar/halo/civic-liker_beta.svg?inline";
 import CivicLikerTrialHalo from "@/assets/avatar/halo/civic-liker_trial.svg?inline";
 
 const HALO_TYPE = {
   NONE: "none",
   CIVIC_LIKER: "civic-liker",
-  CIVIC_LIKER_BETA: "civic-liker-beta",
   CIVIC_LIKER_TRIAL: "civic-liker-trial"
 };
 
@@ -46,7 +41,6 @@ export default {
   components: {
     CivicLikerHalo,
     CivicLikerSmallHalo,
-    CivicLikerBetaHalo,
     CivicLikerTrialHalo
   },
   props: {
@@ -119,9 +113,6 @@ export default {
     isCivicLiker() {
       return this.halo === HALO_TYPE.CIVIC_LIKER;
     },
-    isCivicLikerBeta() {
-      return this.halo === HALO_TYPE.CIVIC_LIKER_BETA;
-    },
     isCivicLikerTrial() {
       return this.halo === HALO_TYPE.CIVIC_LIKER_TRIAL;
     },
@@ -187,7 +178,6 @@ $img-border-width: 3.125%;
           color: #40bfa5;
         }
 
-        .lc-avatar--with-halo--civic-liker-beta &,
         .lc-avatar--with-halo--civic-liker-trial & {
           color: #eec443;
         }

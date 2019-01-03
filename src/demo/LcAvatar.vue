@@ -56,16 +56,6 @@
 
     <h3 class="demo-section__subtitle">
       size="large"<br>
-      halo="civic-liker-beta"
-    </h3>
-    <lc-avatar
-      :src="src"
-      halo="civic-liker-beta"
-      size="large"
-    />
-
-    <h3 class="demo-section__subtitle">
-      size="large"<br>
       halo="civic-liker-trial"
     </h3>
     <lc-avatar
