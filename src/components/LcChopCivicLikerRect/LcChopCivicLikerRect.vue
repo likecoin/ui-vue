@@ -30,11 +30,15 @@ export default {
       defaultSize: 210,
       contentWiggleRotateZ: 3,
       valueWiggleRotateZ: 4,
-      props: ["date", "isTrial", "isTrialling", "isBeta"]
+      props: ["date", "text", "isTrial", "isTrialling", "isBeta"]
     })
   ],
   computed: {
     value() {
+      if (this.text) {
+        return this.text;
+      }
+
       if (this.isBeta) {
         return "LIMITED";
       }

@@ -5,6 +5,10 @@ const EXTRA_PROPS = {
     type: Date,
     default: undefined
   },
+  text: {
+    type: String,
+    default: undefined
+  },
   isBeta: {
     type: [Boolean, String],
     default: false

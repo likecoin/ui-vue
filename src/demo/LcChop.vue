@@ -1,6 +1,7 @@
 <template>
   <section id="lc-chop" class="demo-section">
 
+    <!-- <lc-chop-countdown/> -->
     <h2 class="demo-section__title">&lt;lc-chop-countdown/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
@@ -22,6 +23,8 @@
     </h3>
     <lc-chop-countdown days="99" size="200" />
 
+
+    <!-- <lc-chop-civic-liker/> -->
     <h2 class="demo-section__title">&lt;lc-chop-civic-liker/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
@@ -45,6 +48,14 @@
     </h3>
     <lc-chop-civic-liker is-beta />
 
+    <h3 class="demo-section__subtitle">
+      text="custom"
+    </h3>
+    <lc-chop-civic-liker text="custom" />
+    <lc-chop-civic-liker text="custom" is-trial is-trialling />
+
+
+    <!-- <lc-chop-civic-liker-rect/> -->
     <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
@@ -66,11 +77,20 @@
     <lc-chop-civic-liker-rect :date="new Date()" is-trial is-trialling />
 
     <h3 class="demo-section__subtitle">
-      :date="new Date()"<br>
       is-beta
     </h3>
-    <lc-chop-civic-liker-rect :date="new Date()" is-beta />
+    <lc-chop-civic-liker-rect is-beta />
 
+    <h3 class="demo-section__subtitle">
+      text="custom"
+    </h3>
+    <lc-chop-civic-liker-rect text="custom" />
+    <lc-chop-civic-liker-rect text="custom" is-trial  />
+    <lc-chop-civic-liker-rect text="custom" is-trial is-trialling />
+    <lc-chop-civic-liker-rect text="custom" is-beta />
+
+
+    <!-- <lc-chop-approved/> -->
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
     <lc-chop-approved />

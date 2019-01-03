@@ -24,11 +24,15 @@ export default {
       defaultSize: 128,
       contentWiggleRotateZ: 5,
       valueWiggleRotateZ: 6,
-      props: ["date", "isBeta", "isTrial", "isTrialling"]
+      props: ["date", "text", "isBeta", "isTrial", "isTrialling"]
     })
   ],
   computed: {
     value() {
+      if (this.text) {
+        return this.text;
+      }
+
       if (this.isBeta) {
         return "LIKE";
       }
