@@ -4,7 +4,7 @@
       class="lc-avatar__content"
       :style="contentStyle"
     >
-      <img :src="src" />
+      <img v-bind="$attrs"/>
       <div class="lc-avatar__content__halo">
         <civic-liker-small-halo
           v-if="isSmall && halo !== 'none'"
@@ -38,16 +38,13 @@ const SIZE_TYPE = {
 
 export default {
   name: "lc-avatar",
+  inheritAttrs: false,
   components: {
     CivicLikerHalo,
     CivicLikerSmallHalo,
     CivicLikerTrialHalo
   },
   props: {
-    src: {
-      type: String,
-      default: ""
-    },
     size: {
       type: [String, Number],
       default: SIZE_TYPE.NORMAL,
