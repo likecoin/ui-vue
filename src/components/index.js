@@ -1,4 +1,5 @@
 export * from "./LcAvatar";
+export * from "./LcChopSimple";
 export * from "./LcChopCountdown";
 export * from "./LcChopCivicLiker";
 export * from "./LcChopCivicLikerRect";

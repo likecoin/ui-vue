@@ -90,6 +90,27 @@
     <lc-chop-civic-liker-rect text="custom" is-beta />
 
 
+    <!-- <lc-chop-simple/> -->
+    <h2 class="demo-section__title">&lt;lc-chop-simple/&gt;</h2>
+
+    <h3 class="demo-section__subtitle">
+      text="<lc-dynamic-input
+        :value.sync="chopSampleText"
+        :filter="chopSampleTextFilter"
+      />"
+    </h3>
+    <lc-chop-simple :text="chopSampleText" />
+
+    <h3 class="demo-section__subtitle">
+      text="<lc-dynamic-input
+        :value.sync="chopSampleText"
+        :filter="chopSampleTextFilter"
+      />"<br>
+      is-trial
+    </h3>
+    <lc-chop-simple :text="chopSampleText" is-trial />
+
+
     <!-- <lc-chop-approved/> -->
     <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
 
@@ -104,6 +125,8 @@
 </template>
 
 <script>
+import LcDynamicInput from "@/demo/components/LcDynamicInput";
+import LcChopSimple from "@/components/LcChopSimple";
 import LcChopCountdown from "@/components/LcChopCountdown";
 import LcChopCivicLiker from "@/components/LcChopCivicLiker";
 import LcChopCivicLikerRect from "@/components/LcChopCivicLikerRect";
@@ -112,6 +135,8 @@ import LcChopApproved from "@/components/LcChopApproved";
 export default {
   name: "lc-chop-demo",
   components: {
+    LcDynamicInput,
+    LcChopSimple,
     LcChopCountdown,
     LcChopCivicLiker,
     LcChopCivicLikerRect,
@@ -121,8 +146,14 @@ export default {
     const date = new Date();
     date.setDate(date.getDate() + 32);
     return {
-      date
+      date,
+      chopSampleText: "SAMPLE"
     };
+  },
+  methods: {
+    chopSampleTextFilter(s) {
+      return s.toUpperCase().replace(/[^A-Z]/g, "");
+    }
   }
 };
 </script>
