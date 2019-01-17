@@ -67,6 +67,24 @@
       size="large"
     />
 
+    <h3 class="demo-section__subtitle">
+      size="large"<br>
+      halo="civic-liker"<br>
+      <span class="tag-new">is-clickable</span><br>
+      <span class="tag-new">is-halo-clickable</span><br>
+      <span class="tag-new">@click</span><br>
+      <span class="tag-new">@click-halo</span>
+    </h3>
+    <lc-avatar
+      :src="src"
+      size="large"
+      halo="civic-liker"
+      is-clickable
+      is-halo-clickable
+      @click="onClick"
+      @click-halo="onClickHalo"
+    />
+
   </section>
 </template>
 
@@ -84,6 +102,14 @@ export default {
     return {
       src
     };
+  },
+  methods: {
+    onClick() {
+      alert("@click");
+    },
+    onClickHalo() {
+      alert("@click-halo");
+    }
   }
 };
 </script>
