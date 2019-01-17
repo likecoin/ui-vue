@@ -27,7 +27,22 @@ export default {
       props: ["date", "text", "isBeta", "isTrial", "isTrialling"]
     })
   ],
+  props: {
+    isFlashing: {
+      type: [Boolean, String],
+      default: false
+    }
+  },
   computed: {
+    rootClass() {
+      const { name: className } = this.$options;
+      return [
+        ...this.mixinClass,
+        {
+          [`${className}--flashing`]: this.isFlashing
+        }
+      ];
+    },
     value() {
       if (this.text) {
         return this.text;
@@ -65,6 +80,25 @@ export default {
     font-size: 0.12em;
     font-weight: 600;
     letter-spacing: 0.08em;
+  }
+
+  &--flashing {
+    @keyframes flashing {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+    animation: {
+      name: flashing;
+      duration: 1s;
+      timing-function: ease-in-out;
+      iteration-count: infinite;
+      direction: alternate;
+    }
   }
 }
 </style>

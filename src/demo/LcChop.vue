@@ -54,6 +54,12 @@
     <lc-chop-civic-liker text="custom" />
     <lc-chop-civic-liker text="custom" is-trial is-trialling />
 
+    <h3 class="demo-section__subtitle">
+      text="flashing"<br>
+      <span class="tag-new">is-flashing</span>
+    </h3>
+    <lc-chop-civic-liker text="flashing" is-flashing />
+
 
     <!-- <lc-chop-civic-liker-rect/> -->
     <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
