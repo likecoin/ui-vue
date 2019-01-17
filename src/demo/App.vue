@@ -60,14 +60,22 @@ export default {
 </script>
 
 <style lang="scss">
+html {
+  font-size: 12pt;
+
+  @media screen and (max-width: 600px) {
+    font-size: 10pt;
+  }
+}
+
 body {
   margin: 0;
 }
 
 .app {
-  padding-bottom: 100px;
+  padding-bottom: 8rem;
 
-  font-size: 12pt;
+  font-size: 1rem;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,8 +87,8 @@ body {
     align-items: center;
 
     box-sizing: border-box;
-    min-height: 44px;
-    padding: 8px 12px;
+    min-height: 3rem;
+    padding: 0.5rem 0.75rem;
 
     color: white;
     background: #28646e;
@@ -89,7 +97,7 @@ body {
       color: white;
       font-weight: bold;
 
-      padding: 0 12px;
+      padding: 0 0.8rem;
 
       &:hover {
         color: #d2f0f0;
@@ -102,28 +110,29 @@ body {
   }
 
   &__banner {
-    margin-bottom: 60px;
-    padding: 40px;
+    margin-bottom: 3.75rem;
+    padding: 2.5rem;
 
     color: #28646e;
     background: linear-gradient(to right, #d1efef, #efe6b3);
 
     &__logo {
-      width: 88px;
+      width: 5.5rem;
     }
   }
 }
 
 .demo-section {
-  margin: 60px 16px;
+  margin: 3.75rem 1rem;
 
   & + & {
-    margin-top: 120px;
+    margin-top: 7.5rem;
   }
 
   &__title,
   &__subtitle {
-    margin: 48px 0 24px;
+    margin: 3rem 0 1.5rem;
+    padding: 0 0.8em;
     font-family: "Courier New", monospace;
   }
 
@@ -132,7 +141,7 @@ body {
   }
 
   &__subtitle {
-    margin: 32px 0 16px;
+    margin: 2rem 0 1rem;
     font-size: 1.2em;
   }
 }
