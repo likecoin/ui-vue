@@ -136,4 +136,42 @@ body {
     font-size: 1.2em;
   }
 }
+
+$tags: (
+  new: #16a122,
+  deprecated: #fc5757
+);
+
+.tag {
+  $tag-selector: "";
+
+  @each $name, $color in $tags {
+    &-#{$name}:after {
+      content: "#{$name}";
+      background: $color;
+    }
+
+    @if $tag-selector != "" {
+      $tag-selector: $tag-selector + ",";
+    }
+    $tag-selector: $tag-selector + "&-#{$name}";
+  }
+
+  #{$tag-selector} {
+    &:after {
+      display: inline-block;
+
+      margin: 0 0.2em;
+      padding: 0.05em 0.15em;
+      transform: translateY(-0.3em) rotateZ(-3deg);
+
+      color: white;
+      border: 3px double currentColor;
+      border-radius: 0.3em;
+
+      font-size: 0.5em;
+      text-transform: uppercase;
+    }
+  }
+}
 </style>

@@ -91,7 +91,7 @@
 
 
     <!-- <lc-chop-simple/> -->
-    <h2 class="demo-section__title">&lt;lc-chop-simple/&gt;</h2>
+    <h2 class="demo-section__title tag-new">&lt;lc-chop-simple/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       text="<lc-dynamic-input
@@ -112,7 +112,7 @@
 
 
     <!-- <lc-chop-approved/> -->
-    <h2 class="demo-section__title">&lt;lc-chop-approved/&gt;</h2>
+    <h2 class="demo-section__title tag-deprecated">&lt;lc-chop-approved/&gt;</h2>
 
     <lc-chop-approved />
 
