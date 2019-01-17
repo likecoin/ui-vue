@@ -2,7 +2,10 @@
   <section id="lc-chop" class="demo-section">
 
     <!-- <lc-chop-countdown/> -->
-    <h2 class="demo-section__title">&lt;lc-chop-countdown/&gt;</h2>
+    <h2
+      id="lc-chop-countdown"
+      class="demo-section__title"
+    >&lt;lc-chop-countdown/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       days="9"
@@ -25,7 +28,10 @@
 
 
     <!-- <lc-chop-civic-liker/> -->
-    <h2 class="demo-section__title">&lt;lc-chop-civic-liker/&gt;</h2>
+    <h2
+      id="lc-chop-civic-liker"
+      class="demo-section__title"
+    >&lt;lc-chop-civic-liker/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       :date="new Date()"
@@ -62,7 +68,10 @@
 
 
     <!-- <lc-chop-civic-liker-rect/> -->
-    <h2 class="demo-section__title">&lt;lc-chop-civic-liker-rect/&gt;</h2>
+    <h2
+      id="lc-chop-civic-liker-rect"
+      class="demo-section__title"
+    >&lt;lc-chop-civic-liker-rect/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       :date="new Date()"<br>
@@ -97,7 +106,10 @@
 
 
     <!-- <lc-chop-simple/> -->
-    <h2 class="demo-section__title tag-new">&lt;lc-chop-simple/&gt;</h2>
+    <h2
+      id="lc-chop-simple"
+      class="demo-section__title tag-new"
+    >&lt;lc-chop-simple/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       text="<lc-dynamic-input
@@ -118,7 +130,10 @@
 
 
     <!-- <lc-chop-approved/> -->
-    <h2 class="demo-section__title tag-deprecated">&lt;lc-chop-approved/&gt;</h2>
+    <h2
+      id="lc-chop-approved"
+      class="demo-section__title tag-deprecated"
+    >&lt;lc-chop-approved/&gt;</h2>
 
     <lc-chop-approved />
 

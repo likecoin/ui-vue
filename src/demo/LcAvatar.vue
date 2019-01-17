@@ -1,7 +1,10 @@
 <template>
   <section id="lc-avatar" class="demo-section">
 
-    <h2 class="demo-section__title">&lt;lc-avatar/&gt;</h2>
+    <h2
+      id="lc-avatar"
+      class="demo-section__title"
+    >&lt;lc-avatar/&gt;</h2>
 
     <h3 class="demo-section__subtitle">
       src="ckxpress.jpg"
