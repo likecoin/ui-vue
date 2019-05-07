@@ -1,7 +1,7 @@
 const config = {};
 
 if (process.env.NODE_ENV === "production") {
-  config.baseUrl = "./";
+  config.publicPath = "./";
 }
 
 module.exports = config;
